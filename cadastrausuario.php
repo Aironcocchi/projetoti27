@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($cont == 1) {
         echo "<script>window.alert('USUARIO OU SENHA INCORRETOS');</script>";
     } else {
-        $sql = "INSERT INTO usuarios(usu_nome,usu_senha)VALUES($nome,$senha)";
+        $sql = "INSERT INTO usuarios (usu_nome,usu_senha)VALUES('$nome','$senha')";
         mysqli_query($link, $sql);
-        header("location:listausuarios.php");
+        header("location:listausuario.php");
     }
 }
 ?>
@@ -31,23 +31,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    < href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA">
+    <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA" ></a>
         <div>
             <script>
                 function mostrarsenha() {
                     var tipo = document.getElementByID("senha");
                     if (tipo == "password") {
                         tipo.type = "text";
-                    } else {
+                    } 
+                    else 
+                    {
                         tipo.type = "password";
                     }
                 }
             </script>
             <form action="cadastrausuario.php" method="POST">
                 <h1>CADASTRO DE USUARIOS</h1>
-                <input type="text" name="nome" id="nome" placeholder="NOME">
+                <input type="text" name="nome" id="nome" placeholder="nome">
                 <p></p>
-                <input type="password" name="senha" id="senha" placeholde="SENHA">
+                <input type="password" name="senha" id="senha" placeholder="senha">
                 <p></p>
                 <input type="submit" name="cadastrar" value="CADASTRAR">
             </form>

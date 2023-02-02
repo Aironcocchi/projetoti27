@@ -4,7 +4,7 @@
         $password = $_POST['password'];
         include("conectadb.php");
         #consulta sql para verificar o usuario cadastrado 
-        $sql = "SELECT COUNT(USU_id) FROM usuarios WHERE usu_nome = '$nome' AND usu_senha = 'password'";
+        $sql = "SELECT COUNT(USU_id) FROM usuarios WHERE usu_nome = '$nome' AND usu_senha = '$password'";
         $resultado = mysqli_query($link,$sql);
         while($tbl = mysqli_fetch_array($resultado)){
             $cont = $tbl[0];
