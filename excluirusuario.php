@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     header("location: listausuario.php");
     exit();
 }
-if(isset($_GET['id'])){
+if(!isset($_GET['id'])){
     header("location: listausuario.php");
     exit();
 }
@@ -15,7 +15,7 @@ $id = $_GET['id'];
 $sql = "SELECT usu_nome FROM usuarios WHERE usu_id = '$id'";
 $resultado = mysqli_query($link, $sql);
 while($tbl = mysqli_fetch_array($resultado)){
-    $nome = $tbl[1];
+    $nome = $tbl[0];
 }
 ?>
 <!DOCTYPE html>

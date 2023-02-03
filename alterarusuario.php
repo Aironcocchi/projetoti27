@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 #CAPTURAR ID VIA GET
 $id = $_GET['id'];
-$sql = "SELECT * FROM usuarios WHERE usu_id = '$id'";
+$sql = "SELECT * FROM usuarios WHERE usu_id = $id";
 $resultado = mysqli_query($link, $sql);
 while ($tbl = mysqli_fetch_array($resultado)) {
     $nome = $tbl[1];
@@ -32,7 +32,7 @@ while ($tbl = mysqli_fetch_array($resultado)) {
 </head>        
 <body>
     <div>
-        <form action="alternarusuario.php" method="post">
+        <form action="alterarusuario.php" method="post">
         <input type="hidden" value="<?=$id?>" name="id" required>
         <label>NOME</label>
         <input type="text" name="nome" id="nome" value="<?=$nome?>" required>
