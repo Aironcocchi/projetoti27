@@ -1,6 +1,8 @@
     <?php
+    //abre conexao com o banco de dados
     include("conectadb.php");
-
+//passa a instruçao para o banco de dados
+//funçao da instruçao: LISTAR TODOS OS CONTEUDOS DA TABELA usuarios
     $sql = "SELECT * FROM usuarios";
     $resultado = mysqli_query($link, $sql);
     ?>
@@ -28,9 +30,12 @@
                 while ($tbl = mysqli_fetch_array($resultado)) {
                 ?>
                     <tr>
-                        <td><?= $tbl[1] ?></td>
+                        <!-- <td><?= $tbl[1] ?></td>traz somente o nome para apresentar na tabela -->
+                        <!-- ao clicar no boto ele ja trara o id do usuario para a pagina do alterar -->
                         <td><a href="alterarusuario.php?id=<?=$tbl[0]?>"><input type="button" value="ALTERAR"></a></td>
-                        <td><a href="excluirusuario.php?id=<?=$tbl[0]?>"><input type="button" value="EXCLUIR"></a></td>
+                        <!-- ao clicar no botao ele ja trara o id do usuario para a pagina do excluir -->
+                        <!-- <td><a href="excluirusuario.php?id=</?=$tbl[0]?>"><input type="button" value="EXCLUIR"></a></td> -->
+                       <td><?=$tbl[3]?></td>
                     </tr>
                 <?php
                 }
