@@ -14,13 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //direciona para a pagina listausuario
     header("location: listausuario.php");
     echo "<script>alert('USUARIO ALTERADO COM SUCESSO!!');</script>";
-    exit();
+    exit;
 }
 #CAPTURAR ID VIA GET
 
 //coletanto id via link(url) exemplo alterarusuario.php?id=2
 $id = $_GET['id'];
-$sql = "SELECT * FROM usuarios WHERE usu_id = $id";
+$sql = "SELECT * FROM usuarios WHERE usu_id = '$id'";
 $resultado = mysqli_query($link,$sql);
 while ($tbl = mysqli_fetch_array($resultado)) {
     $nome = $tbl[1];
@@ -47,7 +47,7 @@ while ($tbl = mysqli_fetch_array($resultado)) {
         <label>SENHA</label>
         <input type="password" name="senha" id= "senha" value="<?=$senha?>"required>
         <p></p>
-        <label>status: <?=$check = ($ativo == 's')?"ATIVO":"INATIVO";?></label>
+        
         <br>
         <input type="radio" name="ativo" value="s"> ATIVAR<br>
         <input type="radio" name="ativo" value="n"> DESATIVAR
