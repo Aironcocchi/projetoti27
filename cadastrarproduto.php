@@ -34,24 +34,28 @@ if ($cont == 1) {
 </head>
 <body>
 <div>
+    <form>
     <h1>Cadastra produto</h1>
     <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA" ></a>
     <br><br>
     <input type="text" name="nomepro" id="nomepro" placeholder="Nome do Produto" required>
-    <hr>
+    <br>
+    <br>
     <input type="text" name="descricao" id="descricao" placeholder="Descricao do produto" required>
-    <hr>
+    <br><br>
     <input type="text" name="quantidade" id="quantidade" placeholder="Quantidade do produto" required>
-    <hr>
+    <br><br>
     <input type="text" name="preco" id="preco" placeholder="Preco do produto" required>
-    <hr>
+    <br><br>
+    <input type="submit" name="cadastrar" id="cadastrar" value="cadastrar">
     </div>
+    </form>
     <style>
         hr{
             width: 180px;
             background-color: black;
             position: relative;
-            right: 360px;
+            
         }
       
     </style>
