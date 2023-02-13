@@ -43,11 +43,10 @@ while ($tbl = mysqli_fetch_array($resultado)) {
         <form action="alterarusuario.php" method="post">
         <input type="hidden" value="<?=$id?>" name="id" required>
         <label>NOME</label>
-        <input type="text" name="nome" id="nome" value="<?=$nome?>" required> <!--coleta id e carrega a pagina de forma oculta -->
+        <input type="text" name="nome" value="<?=$nome?>" required> <!--coleta id e carrega a pagina de forma oculta -->
         <label>SENHA</label>
         <input type="password" name="senha" id= "senha" value="<?=$senha?>"required>
         <p></p>
-        
         <br>
         <input type="radio" name="ativo" value="s"> ATIVAR<br>
         <input type="radio" name="ativo" value="n"> DESATIVAR

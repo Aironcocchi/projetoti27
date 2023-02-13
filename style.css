@@ -5,7 +5,7 @@ div{
 .container{
     width: 100vw;
     height: 100vh;
-    background: #590fe4;
+    background: #3a167c;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -17,7 +17,7 @@ table {
     width: 700px;
     font-size: medium;
     border: 2px;
-    border-color: aliceblue;
+    border-color: rgb(0, 0, 0);
     border-radius: 3px;
 }
 

@@ -12,9 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     while ($tbl = mysqli_fetch_array($resultado)) {
         $cont = $tbl[0];
     }
-   //verificaçao visual se usuario existe ou nao 
+   //verificacao visual se usuario existe ou nao 
     if ($cont == 1) {
-        echo "<script>window.alert('USUARIO OU SENHA INCORRETOS');</script>";
+        echo "<script>window.alert('USUARIO A CADASTRADO!!');</script>";
     } else {
         $sql = "INSERT INTO usuarios (usu_nome,usu_senha,usu_ativo)VALUES('$nome','$senha','n')";
         mysqli_query($link, $sql);
@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="./estilo.css">
     <title>CADASTRAR USUARIO</title>
 </head>
-
 <body>
     <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA" ></a>
         <div>
