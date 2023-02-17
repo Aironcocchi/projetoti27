@@ -3,8 +3,20 @@
     include("conectadb.php");
 //passa a instruçao para o banco de dados
 //funçao da instruçao: LISTAR TODOS OS CONTEUDOS DA TABELA usuarios
-    $sql = "SELECT * FROM usuarios";
+
+    $sql = "SELECT * FROM usuarios WHERE usu_ativo = 's'";
     $resultado = mysqli_query($link, $sql);
+    $ativo = "s";
+    if($_SERVER['REQUEST_METHOD']=='POST'){
+ $ativo = $_POST['ativo'];
+ if($ativo == 's'){
+    $sql = "SELECT * FROM usuarios WHERE usu_ativo = 's'";
+    $resultado= mysqli_query($link, $sql);
+ }else{
+    $sql = "SELECT * FROM usuarios WHERE usu_ativo = 'n'";
+    $resultado = mysqli_query($link,$sql);
+ }
+    }
     ?>
     <!DOCTYPE html>
     <html lang="pt-br">
@@ -24,7 +36,7 @@
                     <th>NOME</th>
                     <th>ALTERAR DADOS</th>
                     <!-- <th>EXCLUIR USUARIO</th> -->
-                    <th>ATIVO</th>
+                    <th>ATIVO</th>    
                 </tr>
                 <?php
                 while ($tbl = mysqli_fetch_array($resultado)) {

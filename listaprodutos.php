@@ -21,6 +21,7 @@ $resultado = mysqli_query($link, $sql)
             <th>descricao</th>
             <th>Quantidade</th>
             <th>Preco</th>
+            <th>Alterar</th>
             </tr>
             <?php
             while($tbl = mysqli_fetch_array($resultado)){
@@ -30,6 +31,7 @@ $resultado = mysqli_query($link, $sql)
                     <td><?=$tbl[2]?></td>
                     <td><?=$tbl[3]?></td>
                     <td><?=$tbl[4]?></td>
+                    <td><a href="alterarproduto.php?.id<?=$tbl[0]?>"><input type="button" value="Alterar"></a></td>
                 </tr>
             <?php
             }
