@@ -1,5 +1,5 @@
 <?php
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST"){//retorna para o metodo  post
 // criacao de variaveis 
 $pro_nome = $_POST['nomepro'];//esse campo mostra de onde vai puxar o valor da var
 $pro_descricao = $_POST['descricao'];
@@ -11,7 +11,7 @@ $sql = "SELECT COUNT(pro_id) FROM produto WHERE  pro_nome = '$pro_nome'  AND pro
 pro_quantidade = '$pro_quantidade' AND pro_preco = '$pro_preco'";
  $resultado = mysqli_query($link, $sql);//comando para fazer alteracoes o banco de dados
  while ($tbl = mysqli_fetch_array($resultado)) {
-    $cont = $tbl[0];
+    $cont = $tbl[0];//contagem baseada no ID
 }
 if ($cont == 1) {
     echo "<script>window.alert('PRODUTO CADASTRADO!!');</script>";
@@ -49,7 +49,8 @@ if ($cont == 1) {
     <input type="submit" name="cadastrar" id="cadastrar" value="cadastrar">
     </div>
     </form>
-    <style>
+    <!--   melhorias simples que fiz -->
+    <style>  
         hr{
             width: 180px;
             background-color: black;
