@@ -27,7 +27,7 @@
         <title>Lista Usuario</title>
     </head>
     <body>
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="newestilo.css">
         <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
         <div class="container">
             <!-- <input type="radio" name="listadesativados" value="n"</? $check = ($tbl[3] == "n")? "checked":""?>LISTA DESATIVADOS<br> -->

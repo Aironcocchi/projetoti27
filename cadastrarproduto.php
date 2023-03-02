@@ -5,7 +5,11 @@ $pro_nome = $_POST['nomepro'];//esse campo mostra de onde vai puxar o valor da v
 $pro_descricao = $_POST['descricao'];
 $pro_quantidade = $_POST['quantidade'];
 $pro_preco = $_POST['preco'];
-include("conectadb.php");//conexao com o banco de dados
+$foto1 = $_POST['foto1'];
+#$foto2 = $_POST['foto2']
+
+if($foto1 == "") $img = "foot1.jfif";
+ include("conectadb.php");//conexao com o banco de dados
 //verificando se os campo preenchidos sao existentes
 $sql = "SELECT COUNT(pro_id) FROM produto WHERE  pro_nome = '$pro_nome'  AND pro_descricao = '$pro_descricao' AND
 pro_quantidade = '$pro_quantidade' AND pro_preco = '$pro_preco'";
@@ -16,7 +20,7 @@ pro_quantidade = '$pro_quantidade' AND pro_preco = '$pro_preco'";
 if ($cont == 1) {
     echo "<script>window.alert('PRODUTO CADASTRADO!!');</script>";
 } else {
-    $sql = "INSERT INTO produto (pro_nome,pro_descricao,pro_quantidade,pro_preco)VALUES('$pro_nome','$pro_descricao','$pro_quantidade','$pro_preco')";
+    $sql = "INSERT INTO produto (pro_nome,pro_descricao,pro_quantidade,pro_preco,imagem1)VALUES('$pro_nome','$pro_descricao','$pro_quantidade','$pro_preco', '$foto1')";
     mysqli_query($link, $sql);
     header("location:listaprodutos.php");
 }
@@ -28,7 +32,7 @@ if ($cont == 1) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="newestilo.css">
     <title>Cadastra produto</title>
 </head>
 <body>
@@ -47,6 +51,9 @@ if ($cont == 1) {
     <input type="text" name="preco" id="pro_preco" placeholder="Preco do produto" required>
     <br><br>
     <input type="submit" name="cadastrar" id="cadastrar" value="cadastrar">
+    <label>IMAGEM</label>
+    <input type="file" name = "imagem1" onchange="foot1()">
+    <!-- <img src="../projetoti27/Foot1/foot1.jfif" width="50px" id="foto1"> -->
     </div>
     </form>
     <!--   melhorias simples que fiz -->

@@ -9,7 +9,7 @@ $resultado = mysqli_query($link, $sql)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="newestilo.css">
     <title>Lista produtos</title><!-- *produto* -->
 </head>
 <body>
@@ -33,6 +33,7 @@ $resultado = mysqli_query($link, $sql)
                     <td><?=$tbl[3]?></td>
                   <td>R$ <?= number_format($tbl[4],2,',','.')?></td><!--traz o valor apos 2 virgulas-->
 
+                  <!-- <td><img src=""</td> -->
                   <td><?=$check=($tbl[5]=='s')?"SIM":"NAO"?></td> <!-- validando se o produto esta ativo -->
                     <td><a href="alterarproduto.php?id=<?=$tbl[0]?>"><input type="button" value="Alterar"></a></td>
                 </tr>
