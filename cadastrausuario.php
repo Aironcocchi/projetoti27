@@ -1,5 +1,5 @@
 <?php
- //coletas as variaveis do name do htmle abre a conexao com banco de dados
+ //coletas as variaveis do name do html e abre a conexao com banco de dados
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $senha = $_POST['senha'];
